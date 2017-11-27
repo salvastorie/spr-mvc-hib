@@ -38,7 +38,7 @@ public class LinkController {
 			s = e.getMessage();
 		}
 		ModelAndView mav = new ModelAndView("home");
-		mav.addObject("message", s);
+		mav.addObject("message", "messaggissimo: " + s);
 		return mav;
 	}
 }
