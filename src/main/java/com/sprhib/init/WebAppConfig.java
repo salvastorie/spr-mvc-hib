@@ -1,6 +1,7 @@
 package com.sprhib.init;
 
 import java.util.Properties;
+import java.util.logging.Logger;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
@@ -44,7 +45,10 @@ public class WebAppConfig {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		
 		dataSource.setDriverClassName(env.getRequiredProperty(PROPERTY_NAME_DATABASE_DRIVER));
-		System.out.println("###URL: " + env.getRequiredProperty(PROPERTY_NAME_DATABASE_URL));
+		
+		Logger logger = Logger.getGlobal();
+		logger.info("###URL: " + env.getRequiredProperty(PROPERTY_NAME_DATABASE_URL));
+		
 		dataSource.setUrl(env.getRequiredProperty(PROPERTY_NAME_DATABASE_URL));
 		dataSource.setUsername(env.getRequiredProperty(PROPERTY_NAME_DATABASE_USERNAME));
 		dataSource.setPassword(env.getRequiredProperty(PROPERTY_NAME_DATABASE_PASSWORD));
