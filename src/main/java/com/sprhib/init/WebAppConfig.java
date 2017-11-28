@@ -1,7 +1,6 @@
 package com.sprhib.init;
 
 import java.util.Properties;
-import java.util.logging.Logger;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
@@ -10,7 +9,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
@@ -46,9 +44,9 @@ public class WebAppConfig {
 //		return new PropertySourcesPlaceholderConfigurer();
 //	}
 	
-	public Environment getEnv(){
-		return this.env;
-	}
+//	public Environment getEnv(){
+//		return this.env;
+//	}
 	
 	@Bean
 	public DataSource dataSource() {

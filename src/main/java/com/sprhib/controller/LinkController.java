@@ -1,18 +1,14 @@
 package com.sprhib.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.sprhib.init.WebAppConfig;
-
 @Controller
 public class LinkController {
 	
-	@Autowired
-	private WebAppConfig wac;
+//	@Autowired
+//	private WebAppConfig wac;
 	
 	@RequestMapping(value="/")
 	public ModelAndView mainPage() {
@@ -25,7 +21,7 @@ public class LinkController {
 	}
 	
 	private ModelAndView initialPage(){
-		String s = "";
+//		String s = "";
 //		
 //		
 //		try {
@@ -37,10 +33,10 @@ public class LinkController {
 //			s += "\t" + e.getMessage();
 //		}
 		
-		s += wac.getEnv().toString();
+//		s += wac.getEnv().toString();
 		
 		ModelAndView mav = new ModelAndView("home");
-		mav.addObject("message", "url postgres: " + s);
+		mav.addObject("message", "un messaggio");
 		return mav;
 	}
 }
