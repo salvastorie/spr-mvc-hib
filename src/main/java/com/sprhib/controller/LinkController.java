@@ -1,8 +1,5 @@
 package com.sprhib.controller;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Controller;
@@ -28,17 +25,22 @@ public class LinkController {
 	}
 	
 	private ModelAndView initialPage(){
-		String s;
-		try {
-			DriverManagerDataSource dmds = (DriverManagerDataSource)wac.dataSource();
-			s = dmds.getUrl();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			s = e.getMessage();
-		}
+		String s = "";
+//		
+//		
+//		try {
+//			DriverManagerDataSource dmds = (DriverManagerDataSource)wac.dataSource();
+//			s += "\t" + dmds.getUrl();
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			s += "\t" + e.getMessage();
+//		}
+		
+		s += wac.getEnv().toString();
+		
 		ModelAndView mav = new ModelAndView("home");
-		mav.addObject("message", "messaggissimo: " + s);
+		mav.addObject("message", "url postgres: " + s);
 		return mav;
 	}
 }
